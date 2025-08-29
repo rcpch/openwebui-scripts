@@ -19,7 +19,7 @@ df["domain"] = df["link"].apply(lambda x: urlparse(x).hostname)
 df = df.loc[df["domain"] == "www.nice.org.uk"]
 
 def download_file(url):
-    local_filename = "docs/" + url.split('/')[-1]
+    local_filename = "docs/" + url.split('/')[-1] + ".pdf"
 
     if os.path.exists(local_filename):
         print(f"\tSkipping as already downloaded")
